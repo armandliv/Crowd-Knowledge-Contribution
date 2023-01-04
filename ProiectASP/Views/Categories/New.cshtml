@@ -1,0 +1,24 @@
+﻿@model ProiectASP.Models.Category
+
+
+<h2 class="text-center mt-5">Adaugare categorie</h2>
+<br />
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6 offset-3">
+
+            @using (Html.BeginForm(actionName: "New", controllerName: "Categories",
+            method: FormMethod.Post))
+            {
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                @Html.Label("CategoryName", "Nume Categorie")
+                    <br />
+                @Html.TextBox("CategoryName", null, new { @class = "form-control" })
+                <br />
+
+                <br />
+                <button class="btn btn-success" type="submit">Adauga categorie</button>
+            }
+        </div>
+    </div>
+</div>

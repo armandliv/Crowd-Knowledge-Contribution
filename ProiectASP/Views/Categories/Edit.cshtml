@@ -1,0 +1,35 @@
+﻿@model ProiectASP.Models.Category
+
+<h2 class="text-center mt-5">Editare categorie</h2>
+<br />
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            @using (Html.BeginForm(actionName: "Edit", controllerName: "Categories",
+            method: FormMethod.Post,
+            routeValues: new { id = Model.Id }))
+            {
+                /* @Html.HiddenFor(m => m.Id)  */
+
+
+                @Html.Label("CategoryName", "Nume Categorie")
+                <br />
+                @Html.EditorFor(m => m.CategoryName, new { htmlAttributes = new { @class = "form-control" } })
+
+                @Html.ValidationMessageFor(m => m.CategoryName, null, new { @class = "text-danger" })
+                <br />
+
+                <br />
+
+                <button class="btn btn-sm btn-success" type="submit">Modifica categorie</button>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
